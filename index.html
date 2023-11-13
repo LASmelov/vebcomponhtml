@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shadow DOM Simple</title>
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <!-- <div id ="container">
+        Это оригинальный текст
+    </div>
+
+
+
+
+    <script>
+        const container = document.getElementById('container');
+
+        const shadowRoot = container.attachShadow({mode: 'open'});
+
+        const shadowText = document.createElement('span');
+        shadowText.textContent = 'Это неоригинальный текст';
+
+        const style = document.createElement('style');
+        style.textContent = `
+        span{
+                color: blue;
+                font-weight: bold;
+
+
+        }
+        `;
+
+        shadowRoot.appendChild(style);
+        shadowRoot.appendChild(shadowText);
+    </script> -->
+
+    <!-- 
+<div id ="container">
+    <h1>xeexexex</h1>
+
+    <h3>xeexexexexeexxexe</h3>
+</div>
+
+
+<script>
+    const container = document.getElementById('container');
+
+    const shadowRoot = container.attachShadow({mode: 'open'});
+
+    const shadowText = document.createElement('h1');
+    shadowText.textContent = 'cqqqqqqqq';
+
+    const shadowText1 = document.createElement('h3');
+    shadowText1.textContent = 'rrrrrrrrrrr';
+
+
+    const style = document.createElement('style');
+
+    style.textContent = `
+    h1{
+            color: pink;
+            font-weight: Extra Bold;
+    }
+
+    h3{
+            color: red;
+            font-weight: Thin;
+    }
+    `;
+
+    shadowRoot.appendChild(style);
+    shadowRoot.appendChild(shadowText);
+    shadowRoot.appendChild(shadowText1);
+</script> -->
+
+    <!-- <div id="container">
+    <h1>xeexexex</h1>
+    <h3>xeexexexexeexxexe</h3>
+</div>
+    
+    <script>
+        const container = document.getElementById('container');
+        const shadowRoot = container.attachShadow({ mode: 'open' });
+    
+        const div = document.createElement('div');
+        div.classList.add('my-div');
+    
+        const shadowText = document.createElement('p');
+        shadowText.textContent = 'cqqqqqqqq';
+    
+        const shadowText1 = document.createElement('a');
+        shadowText1.textContent = 'rrrrrrrrrrr';
+    
+        const shadowLink = document.createElement('a');
+        shadowLink.textContent = 'Это ссылка';
+        shadowLink.href = 'https://rostov.bulgakov.app/';
+
+        const shadowImg = document.createElement('img');
+        shadowImg.src = 'assets/img/1.jpg';
+    
+        const style = document.createElement('style');
+        style.textContent = `
+        .my-div {
+            display: flex;
+            align-items: center; 
+            flex-direction: column;
+            background-color: gray;
+            padding: 50px;
+        }
+    
+        p {
+            color: pink;
+            font-weight: 800;
+        }
+    
+        a {
+            color: red;
+            font-weight: 100;
+        }
+        `;
+    
+        div.appendChild(shadowText);
+        div.appendChild(shadowText1);
+        div.appendChild(shadowLink);
+        div.appendChild(shadowImg);
+    
+        shadowRoot.appendChild(style);
+        shadowRoot.appendChild(div);
+    </script> -->
+
+    <!-- задание 4 -->
+
+    <!-- <custom-form></custom-form>
+  
+<script src ="form-component.js"></script> -->
+
+    <!-- задание 5  -->
+
+    <!-- <template id="product-card-template">
+    <div class="product-card">
+        <img class="product-image" src="" alt="Изображение товара">
+        <h2 class="product-title"></h2>
+        <p class="product-price"></p>
+    </div>
+</template>
+
+
+<div id="product-container"></div>
+
+
+задание 8.2
+<click-counter></click-counter>
+<script src="main.js"></script>
+<link rel="stylesheet" href="style.css">
+
+<script> -->
+    <!-- // class MyComponent extends HTMLElement {
+    //     constructor(){
+    //         super();
+
+    //         const shadow = this.attachShadow({ mode: 'open'});
+
+    //         const template = document.getElementById('my-template');
+
+    //         const clone = document.importNode(tempale.content, true);
+
+    //         shadow.appendChild(clone);
+    //     }
+    // }
+
+
+    // costomElement.define('my-component', MyComponent);
+
+
+    // const original = document.getElementById('original');
+    // const cloned = original.cloneNode(true);
+
+    // const template = document.getElementById('product-card');
+    // const cardClone = document.importNode(template.content, true); -->
+
+    <!-- const template = document.getElementById('product-card-template');
+
+    const productContainer = document.getElementById('product-container');
+
+    const products = [
+        {title: 'пельмени', price: '299.99р', image: 'assets/img/product1.jpg'},
+        {title: 'сосиска', price: '29р', image: 'assets/img/product2.jpg'},
+        {title: 'яйцо', price: '5р', image: 'assets/img/product3.jpg'},
+    ];
+
+    products.forEach(product => {
+        const clone = document.importNode(template.content, true);
+
+        const image = clone.querySelector('.product-image');
+        image.src = product.image;
+
+        const title = clone.querySelector('.product-title');
+        title.textContent = product.title;
+
+        const price = clone.querySelector('.product-price');
+        price.textContent = product.price;
+
+        productContainer.appendChild(clone);
+    }); -->
+    <!-- </script>
+
+
+
+<style>
+    .product-card {
+        border: 1px solid white;
+        padding: 10px;
+        margin: 10px;
+        width: 200px;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .product-image{
+        max-width: 100%;
+    }
+</style> -->
+
+    <!-- задание 6
+<div class="container">
+<div id="myDiv"></div>
+
+<button id="myButton">Нажми меня</button>
+
+<input id="myInput" type="text"></input>
+
+<img id="myImage" src="#" alt="Изображение">
+</div>
+
+<style>
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+</style>
+<script>
+    let element = document.getElementById("myDiv");
+
+    textContent = element.textContent;
+
+    element.textContent="Измененный текст"
+
+
+
+    let image = document.getElementById("myImage");
+    image.alt = "Новое описание";
+
+    let input = document.getElementById('myInput');
+    input.setAttribute('value', 'новое описание');
+
+    console.log(input.value);
+
+    let button = document.getElementById("myButton");
+    let div = document.getElementById("myDiv");
+
+    button.addEventListener("click", function() {
+
+        
+    myDiv.style.backgroundColor = "red";
+
+    });
+</script> -->
+
+    <!-- кт 1 с булгакова -->
+
+    <!-- <template id="contact-card">
+      <style>
+        .contact-card {
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          padding: 10px;
+          margin: 10px;
+          width: 300px;
+          background-color: #ffffff;
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-card img {
+          width: 100px;
+          height: 100px;
+          object-fit: cover;
+          border-radius: 50%;
+          grid-row: 1;
+          grid-column: 1;
+        }
+
+        .contact-card a {
+          color: #0000ee;
+          text-decoration: none;
+        }
+      </style>
+
+      <div class="contact-card">
+        <img src="" alt="Contact Image" />
+        <h2></h2>
+        <p>Email: <a href="mailto:"></a></p>
+        <p>Phone:</p>
+      </div>
+    </template>
+
+    <script>
+      class ContactCard extends HTMLElement {
+        constructor() {
+          super();
+
+          const template = document.getElementById('contact-card');
+          const templateContent = template.content;
+
+          this.attachShadow({ mode: 'open' }).appendChild(
+            templateContent.cloneNode(true)
+          );
+        }
+
+        connectedCallback() {
+          const shadowRoot = this.shadowRoot;
+          const image = shadowRoot.querySelector('img');
+          const name = shadowRoot.querySelector('h2');
+          const email = shadowRoot.querySelector('a');
+          const phone = shadowRoot.querySelector('p:last-child');
+
+          image.src = this.getAttribute('image');
+          name.textContent = this.getAttribute('name');
+          email.textContent = this.getAttribute('email');
+          email.href = 'mailto:' + this.getAttribute('email');
+          phone.textContent = this.getAttribute('phone');
+        }
+      }
+
+      customElements.define('contact-card', ContactCard);
+    </script>
+
+    <contact-card
+      image="assets/img/1.jpg"
+      name="John Doe"
+      email="johndoe@example.com"
+      phone="123456789"
+    ></contact-card>
+
+    <contact-card
+      image="assets/img/1.jpg"
+      name="Jane Smith"
+      email="janesmith@example.com"
+      phone="987654321"
+    ></contact-card> -->
+
+    <!-- задание 7 -->
+    <script>
+      // 1
+      // class MyCustomElement extends HTMLElement {
+      //   constructor() {
+      //     super();
+
+      //     const shadow = this.attachShadow({ mode: 'open' });
+      //     const paragraph = document.createElement('p');
+      //     paragraph.textContent = 'првиет, это мой пользовательский элемент';
+      //     shadow.appendChild(paragraph);
+      //   }
+      // }
+      // customElements.define('my-custom-element', MyCustomElement);
+
+      // 2
+      // class MyCustomElement extends HTMLElement {
+      //   constructor() {
+      //     super();
+      //     this.addEventListener('click', () => {
+      //       alert('элемент был кликнут');
+      //     });
+      //   }
+      // }
+
+      // 3
+
+      // class MyCustomElement extends HTMLElement {
+      //   constructor() {
+      //     super();
+
+      //     this.button = document.createElement('button');
+      //     this.button.textContent = 'нажми меня';
+      //     this.button.addEventListener('click', () => {
+      //       alert('кнопка была нажата');
+      //     });
+
+      //     const shadow = this.attachShadow({ mode: 'open' });
+      //     shadow.appendChild(this.button);
+      //   }
+      // }
+
+      // 4
+
+      // class UserInfo extends HTMLElement {
+      //   constructor() {
+      //     super();
+      //     const shadow = this.attachShadow({ mode: 'open' });
+
+      //     const nameElement = document.createElement('p');
+      //     nameElement.textContent = 'Имя: john doe';
+
+      //     const emailElement = document.createElement('p');
+      //     emailElement.textContent = 'email: john@example.com';
+
+      //     shadow.appendChild(nameElement);
+      //     shadow.appendChild(emailElement);
+      //   }
+      // }
+
+      // customElements.define('user-info', UserInfo);
+      // 2
+
+      // customElements.define('my-custom-element', MyCustomElement);
+
+      // 3
+      // customElements.define('custom-button', CustomButton);
+      //
+
+      // задание 8.1
+
+      // connectedCallBack(){
+      //   вызывается при добавление элемента
+      // }
+
+      // disconnectedCallBack(){
+      //   при удаление элемента из документа
+      // }
+
+      // static get observedAttributes(){
+      //   // return[для отслеживания изменений элементов]
+      // }
+
+      // attributeChangedCallBack(name, oldValue, newValue){
+      //   вызывается при изменение одного из перечисленных выше атрибутов
+      // }
+
+      // adoptedCallBack(){
+      //   вызывается когда элемент переносится в новый докусмент
+      // }
+    </script>
+
+    <!-- 2 -->
+    <!-- <my-custom-element> </my-custom-element> -->
+
+    <!-- 3 -->
+    <!-- <custom-button> </custom-button> -->
+
+    <!-- 4 -->
+    <!-- <user-info></user-info> -->
+
+    <!-- задание 8.2 -->
+
+    <!-- <click-counter></click-counter>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="./assets/style.css" /> -->
+  </body>
+</html>
