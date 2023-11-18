@@ -67,3 +67,88 @@
 //   }
 // }
 // customElements.define('click-counter', ClickCounter);
+
+// задание 9.1
+
+// customElements.define(
+//   'my-paragraph',
+//   class extends HTMLElement {
+//     constructor() {
+//       super();
+//       let template = document.getElementById('my-paragraph');
+//       let templateContent = template.content;
+
+//       const shadowRoot = this.attachShadow({ mode: 'open' });
+//       shadowRoot.appendChild(templateContent.cloneNode(true));
+//     }
+//   }
+// );
+
+// задание 9.2
+
+// 1
+// customElements.define(
+//   'my-paragraph',
+//   class extends HTMLElement {
+//     constructor() {
+//       super();
+//       const template = document.getElementById('my-paragraph');
+//       const container = document.querySelector('main');
+
+//       for (let i = 0; i < 5; i++) {
+//         const clone = document.importNode(template.content, true);
+//         container.appendChild(clone);
+//       }
+
+//       const shadowRoot = this.attachShadow({ mode: 'open' });
+//       shadowRoot.appendChild(templateContent.cloneNode(true));
+//     }
+//   }
+// );
+
+// 2
+// customElements.define(
+//   'my-paragraph',
+//   class extends HTMLElement {
+//     constructor() {
+//       super();
+
+//       this.attachShadow({ mode: 'open' });
+//     }
+
+//     connectedCallback() {
+//       const template = document.getElementById('my-paragraph');
+
+//       const cardsData = [
+//         {
+//           imageSrc: 'assets/img/133317661_4ff279ab3d_o — копия.jpg',
+//           title: 'Заголовок 1',
+//           description: 'Описание карточки',
+//         },
+//         {
+//           imageSrc: 'assets/img/133317661_4ff279ab3d_o — копия.jpg',
+//           title: 'Заголовок 2',
+//           description: 'Описание карточки',
+//         },
+//         {
+//           imageSrc: 'assets/img/133317661_4ff279ab3d_o — копия.jpg',
+//           title: 'Заголовок 3',
+//           description: 'Описание карточки',
+//         },
+//         {
+//           imageSrc: 'assets/img/133317661_4ff279ab3d_o — копия.jpg',
+//           title: 'Заголовок 4',
+//           description: 'Описание карточки',
+//         },
+//       ];
+
+//       cardsData.forEach((data) => {
+//         const clone = document.importNode(template.content, true);
+//         clone.querySelector('img').src = data.imageSrc;
+//         clone.querySelector('h2').textContent = data.title;
+//         clone.querySelector('p').textContent = data.description;
+//         this.shadowRoot.appendChild(clone);
+//       });
+//     }
+//   }
+// );

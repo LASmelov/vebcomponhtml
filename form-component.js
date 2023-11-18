@@ -22,8 +22,6 @@
 //         emailInput.type = 'email';
 //         emailInput.placeholder = 'Email';
 
-    
-
 //         const submitButton = document.createElement('button');
 //         submitButton.textContent = 'Отправить';
 
@@ -78,7 +76,6 @@
 //         submitButton3.style.border = 'none';
 //         submitButton3.style.padding = '10px 20px';
 //         submitButton3.style.cursor = 'pointer';
-        
 
 //         form.appendChild(nameInput);
 //         form.appendChild(name2Input);
@@ -87,7 +84,6 @@
 //         form.appendChild(submitButton);
 //         form.appendChild(submitButton2);
 //         form.appendChild(submitButton3);
-        
 
 //         shadow.appendChild(form);
 //     }
@@ -97,10 +93,6 @@
 
 // кт 1 с булгакова
 
-
-
-
 // 5 задание
 
-
-// задание 6 
+// задание 6
