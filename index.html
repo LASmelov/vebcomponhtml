@@ -540,5 +540,111 @@
       <script src="main.js"></script>
     
      -->
+
+
+
+<!-- задание 10-11 -->
+
+<!-- <select name="city" id="city-select">
+  <option value="">--Выберите город--</option>
+  <option value="petersburg">Санкт-Петербург</option>
+  <option value="samara">Самара</option>
+  <option value="perm">Пермь</option>
+  <option value="novosibirsk">Новосибирск</option>
+      </select>
+      <br>
+      <custom-menu>
+          <title>Сладости</title>
+          <item>Леденцы</item>
+          <item>Фруктовые тосты</item>
+          <item>Кексы</item>
+      </custom-menu>
+      <script>
+      customElements.define('user-card', class extends HTMLElement{
+          isConnectedCallback(){
+              this.attachShadow({mode: 'open'});
+              this.shadowRoot.innerHTML = `
+              <div> Имя: 
+                  <slot name = "username"></slot>
+              </div>
+              <div>Дата рождения:
+                  <slot name="bithday"></slot>
+                  </div>
+              `;
+          }
+      });
+      </script>
+      <user-card>
+          <span slot="username">Смелов Леонид</span>
+          <span slot="birthday">16.11.2005</span>
+      </user-card> -->
+
+
+      <!-- задание 11 -->
+
+      <!-- <custom-menu id="menu">
+        <span slot="title">Sweets</span> 
+    </custom-menu>
+
+        <script>
+        customElements.define('custom-menu', class extends HTMLElement {
+        connectedCallback() {
+        this.attachShadow({mode: 'open'}); 
+        this.shadowRoot.innerHTML = `<div class="menu">
+        <slot name="title"></slot>
+        <ul><slot name="item"></slot></ul>
+
+        </div>`;
+        
+        
+        this.shadowRoot.firstElementChild.addEventListener('slotchange',
+        e => alert("slotchange: " + e.target.name)
+            );
+        } 
+    });
+        
+        setTimeout(() => {
+        menu.insertAdjacentHTML('beforeEnd', '<li slot="item">Леденцы</li>') 
+    }, 1000);
+        
+        setTimeout(() => {
+        menu.querySelector('[slot="title"]').innerHTML = "Новое меню";
+          descendant
+        }, 2000); 
+</script>
+
+<custom-menu id="menu">
+    <span slot="title">Сладости</span>
+    <li slot="item">Леденцы</li>
+    <li slot="item">Фрутовые тосты</li>
+    <li slot="item">Кексы</li>
+</custom-menu>
+<script>
+        customElements.define('custom-menu', class extends HTMLElement{
+            items = []      
+        connectedCallback() {
+
+        this.attachShadow({mode: 'open'}); 
+        this.shadowRoot.innerHTML = `<div class="menu">
+        <slot name="title"></slot>
+        <ul><lot name="ilem"></slot></ul>
+        </div>`;
+
+        this.firstElementChild.addEventListener('slotchange', e => {
+        let slot = e.target;
+        if (slot.name =='item') { 
+        this.items = slot.assignedElements().map(elem => elem.textContent);
+        alert("Items: " + this.items);
+        }
+    });
+}
+});
+
+
+setTimeout(() => {
+menu.insertAdjacentHTML('beforeEnd', '<li slot="Item">Cupcakes</li>')
+}, 1000);
+</script> -->
+
   </body>
 </html>
