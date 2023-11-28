@@ -154,3 +154,148 @@ footer {
   bottom: 0;
   width: 100%;
 } */
+
+
+/* кт-5 */
+/* #calculator {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 5px;
+  font-size: 16px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+#total-expenses {
+  text-align: center;
+} */
+
+
+
+/* задание - 14 */
+/* 3 */
+/* menu ul {
+  margin: 0;
+  list-style: none; padding-left: 20px;
+  display: none;
+  }
+
+  .menu .title {
+  font-size: 18px; cursor: pointer;
+  }
+  menu .title::before{
+  content: '\2764';
+   font-size: 80%;
+  color: red;
+}
+
+  .menu.open .title::before {
+  content: '\26C4 ';
+  }
+  .menu.open ul {
+  display: block;
+  } */
+
+
+  /* задание 12.6 */
+  /* body{
+padding: 10px;
+  }
+.carousel{
+position: relative;
+width: 398px;
+padding: 10px 40px;
+border: 1px solid #ccc;
+border-radius: 15px;
+background: #eee;
+}
+.carousel img {
+width: 130px;
+height: 130px;
+display: block;
+}
+
+.arrow{
+position: absolute;
+ top: 60px; 
+ padding: 0; 
+ background:
+  #ddd; border-radius: 
+  15px;
+   border: 1px solid gray;
+font-size: 24px;
+line-height: 24px; 
+color: #444;
+ display: block;
+}
+
+.arrow:focus {
+outline: none;
+}
+.arrow:hover { 
+  background: #ccc;
+   cursor: pointer;
+}
+.prev{
+left: 7px;
+}
+.next {
+right: 7px;
+}
+.gallery {
+width: 390px;
+overflow: hidden;
+}
+.gallery ul {
+height: 130px;
+width: 9999px;
+margin: 0;
+padding: 0;
+list-style: none;
+transition: margin-left 250ms;
+/* удаляем пустое пространство между элементами li, у которых установлен
+inline-block */
+/* font-size: 0;
+}
+.gallery li {
+display: inline-block;
+} */ 

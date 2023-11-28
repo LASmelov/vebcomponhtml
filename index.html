@@ -646,5 +646,178 @@ menu.insertAdjacentHTML('beforeEnd', '<li slot="Item">Cupcakes</li>')
 }, 1000);
 </script> -->
 
+
+
+
+<!-- кт-4 -->
+<!-- <div id="calculator">
+  <h1>Калькулятор расходов</h1>
+  <form>
+      <label for="expense-name">Название расхода:</label>
+      <input type="text" id="expense-name" required>
+      <label for="expense-amount">Сумма расхода:</label>
+      <input type="number" id="expense-amount" required>
+      <button type="submit">Добавить расход</button>
+  </form>
+  <ul id="expense-list"></ul>
+  <p id="total-expenses">Общая сумма расходов: 0</p>
+</div>
+
+<script src="main.js"></script> -->
+
+
+
+<!-- задание - 14 -->
+<!-- 1
+<input type="button" id="hider" value="Нажмите, чтобы спрятать текст" />
+<div id="text">Текст</div>
+
+<script>
+// Здесь не важно, как мы скрываем текст.
+// Также можно использовать style.display:
+document.getElementById('hider').onclick = function() {
+document.getElementById('text').hidden = true;
+} -->
+
+<!-- 2
+<input type="button" id="hider" value="Нажмите, чтобы спрятать текст" />
+<div id="text">Текст</div>
+
+<script>
+// Здесь не важно, как мы скрываем текст.
+// Также можно использовать style.display:
+document.getElementById('hider').onclick = function() {
+document.getElementById('hider').hidden = true;
+} -->
+
+<!-- 3 -->
+<!-- <div id="sweeties" class="menu">
+  <span class="title">Сладости (нажми меня)!</span> <ul>
+  <li>Пирожное</li>
+  <li>Пончик</li>
+  <li>Мёд</li>
+  </ul>
+  </div>
+  
+  <script>
+  let menuElem = document.getElementById('sweeties'); let titleElem = menuElem.querySelector('.title');
+  titleElem.onclick = function() {
+  menuElem.classList.toggle('open');
+  };
+  </script>
+</script> -->
+
+
+<!-- 4 -->
+<!-- <div>
+  <div class="pane">
+  <h3>Заголовок 1</h3>
+  <p>Текст сообщения 1</p> </div>
+  <div class="pane">
+  <h3>Заголовок 2</h3>
+  <p>Текст сообщения2 2</p>
+  </div>
+  <div class="pane">
+  <h3>Заголовок 3</h3>
+  <p>Текст сообщения 3k/p>
+  </div>
+  </div>
+  <script>
+    let panes = document.querySelectorAll('.pane');
+    for(let pane of panes) {
+    pane.insertAdjacentHTML("afterbegin", "<button class="remove-button">[x]</button>");
+    // кнопка становится первым потомком плитки (pane)
+    pane. firstChild.onclick = () => pane.remove();
+    }
+    </script> -->
+
+    <!-- 5 -->
+
+    <h1>Угадайте число от 1 до 100</h1>
+<input type="number" id="userGuess" placeholder="Введите число"> 
+<button id="guessButton">Попробовать</button> 
+<p id="message"></p>
+
+<script>
+//   /
+// Генерация случайного числа от 1 до 100
+const targetNumber = Math.floor(Math.random() *
+100) + 1;
+// Переменная для счетчика попыток
+let attempts = 0;
+
+const userGuessInput = document.getElementById('userGuess'); 
+const guessButton = document.getElementById('guessButton');
+ const message = document.getElementById('message');
+guessButton.addEventListener('click', () => { 
+  // Код обработки клика на кнопку будет здесь
+  const userGuess = parseInt(userGuessInput.value);
+if (isNaN(userGuess) || userGuess < 1 || userGuess > 100) { 
+  message.textContent = "Введите число от 1 до 100"; 
+}else {
+attempts++;
+
+if (userGuess < targetNumber) {
+message.textContent = 'Загаданное число больше';
+} else if (userGuess > targetNumber) {
+message.textContent = "Загаданное число меньше";
+}else {
+message.textContent = `Поздравляем! Вы угадали число ${targetNumber} за ${attempts} попыток.` ; 
+guessButton.disabled = true;
+userGuessInput.disabled = true;
+}
+}
+});
+</script>
+
+
+
+<!-- 6 -->
+<!-- <div id="carousel" class="carousel">
+  <button class="arrow prev">&#9668</button> <div class="gallery">
+  <ul>
+  <li><img src="img/133317661_4ff279ab3d_o.jpg"></li>
+  <li><img src="img/klipartz.com.png"></li>
+  <li><img src="img/133317661_4ff279ab3d_o.jpg"></li>
+  <li><img src="img/klipartz.com.png"></li>
+  <li><img src="img/133317661_4ff279ab3d_o.jpg"></li>
+  <li><img src="img/klipartz.com.png"></li>
+  <li><img src="img/133317661_4ff279ab3d_o.jpg"></li>
+  <li><img src="img/klipartz.com.png"></li>
+  </ul>
+  </div>
+  <button class="arrow next">&#9658</button>
+  </div>
+
+
+  <script>
+    let i = 1; 
+    for(let li of carousel.querySelectorAll('li')) {
+        li.style.position = 'relative';
+        li.insertAdjacentHTML('beforeend',`<span style="position:absolute;left:0;top:0">${i}</span>`); 
+        i++;
+    }
+    /* конфигурация */ 
+    let width = 130; // ширина картинки 
+    let count = 3; // видимое количество изображений
+    let list = carousel.querySelector('ul');
+    let listElems = carousel.querySelectorAll('li');
+    let position = 0; // положение ленты прокрутки
+    carousel.querySelector('.prev').onclick = function() {
+    // сдвиг влево
+    position += width * count;
+    // последнее передвижение влево может быть не на 3, а на 2 или 1 элемент
+    position = Math.min(position, 0)
+    list.style.marginLeft = position + 'px';
+    };
+    carousel.querySelector('.next').onclick = function()
+    {
+    // сдвиг вправо
+    position -= width * count;
+    // последнее передвижение вправо может быть не на 3, а на 2 или 1 элемент
+    position = Math.max(position, -width * (listElems.length - count));
+    list.style.marginLeft = position + 'px';
+    };
+    </script> -->
   </body>
 </html>

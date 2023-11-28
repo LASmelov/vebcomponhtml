@@ -152,3 +152,67 @@
 //     }
 //   }
 // );
+
+
+// // кт-4
+// let expenseNameInput = document.getElementById('expense-name');
+// let expenseAmountInput = document.getElementById('expense-amount');
+// let expenseList = document.getElementById('expense-list');
+// let totalExpenses = document.getElementById('total-expenses');
+
+// // Массив для хранения всех расходов
+// let expenses = [];
+
+// // Функция для отображения расходов и обновления общей суммы
+// function updateExpenses() {
+//     expenseList.innerHTML = ''; // Очищаем список расходов
+
+//     let total = 0; // Переменная для хранения общей суммы
+
+//     // Проходимся по каждому расходу и создаем элемент списка
+//     expenses.forEach(function (expense) {
+//         let li = document.createElement('li');
+//         li.textContent = expense.name + ' - ' + expense.amount;
+
+//         // Кнопка для удаления расхода
+//         let deleteButton = document.createElement('button');
+//         deleteButton.textContent = 'Удалить';
+//         deleteButton.addEventListener('click', function () {
+//             // Удаляем расход из массива и обновляем отображение
+//             expenses.splice(expenses.indexOf(expense), 1);
+//             updateExpenses();
+//         });
+
+//         li.appendChild(deleteButton);
+//         expenseList.appendChild(li);
+
+//         total += expense.amount; // Добавляем сумму расхода к общей сумме
+//     });
+
+//     totalExpenses.textContent = 'Общая сумма расходов: ' + total;
+// }
+
+// // Обработчик отправки формы
+// document.querySelector('form').addEventListener('submit', function (event) {
+//     event.preventDefault(); // Отменяем перезагрузку страницы
+
+//     let name = expenseNameInput.value;
+//     let amount = parseInt(expenseAmountInput.value);
+
+//     if (name && amount) { // Проверка на заполнение полей
+//         // Создаем новый объект с данными расхода и добавляем его в массив
+//         expenses.push({
+//             name: name,
+//             amount: amount
+//         });
+
+//         // Очищаем поля ввода
+//         expenseNameInput.value = '';
+//         expenseAmountInput.value = '';
+
+//         updateExpenses(); // Обновляем отображение
+//     }
+// });
+
+// // Инициализируем отображение расходов
+// updateExpenses();
